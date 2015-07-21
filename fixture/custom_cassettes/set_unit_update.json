@@ -2,13 +2,18 @@
   {
     "request": {
       "url": "http://localhost:7002/fleet/v1/units/test.service",
+      "method": "put",
+      "options": {
+        "connect_timeout": 5000
+      },
       "headers": {
         "Content-Type": "application/json"
       },
       "body": "{\"desiredState\":\"launched\"}"
     },
     "response": {
-      "status_code": 204,
+      "status_code": ["HTTP/1.1", 204, "No Content"],
+      "type": "ok", 
       "headers": {},
       "body": ""
     }

@@ -1,6 +1,6 @@
 defmodule FleetApi.Etcd.Test do
   use ExUnit.Case
-  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
+  use ExVCR.Mock, adapter: ExVCR.Adapter.Httpc, options: [clear_mock: true]
 
   import FleetApi.Etcd
 

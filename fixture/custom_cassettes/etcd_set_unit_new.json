@@ -1,10 +1,15 @@
 [
   {
     "request": {
-      "url": "https://discovery.etcd.io/abcd1234"
+      "url": "https://discovery.etcd.io/abcd1234",
+      "method": "get",
+      "options": {
+        "connect_timeout": 5000
+      }
     },
     "response": {
-      "status_code": 200,
+      "status_code": ["HTTP/1.1", 200, "OK"],
+      "type": "ok", 
       "headers": {
         "Content-Type": "application/json"
       },
@@ -13,10 +18,15 @@
   },
   {
     "request": {
-      "url": "~r/http:\/\/127.0.0.[1-3]:7002\/fleet\/v1\/discovery/"
+      "url": "~r/http:\/\/127.0.0.[1-3]:7002\/fleet\/v1\/discovery/",
+      "method": "get",
+      "options": {
+        "connect_timeout": 5000
+      }
     },
     "response": {
-      "status_code": 200,
+      "status_code": ["HTTP/1.1", 200, "OK"],
+      "type": "ok", 
       "headers": {
         "Content-Type": "application/json"
       },
@@ -26,13 +36,18 @@
   {
     "request": {
       "url": "~r/http:\/\/127.0.0.[1-3]:7002\/fleet\/v1\/units\/test.service/",
+      "method": "put",
+      "options": {
+        "connect_timeout": 5000
+      },
       "headers": {
         "Content-Type": "application/json"
       },
       "body": "{\"currentState\":null,\"desiredState\":\"launched\",\"machineID\":null,\"name\":\"test.service\",\"options\":[{\"name\":\"ExecStart\",\"section\":\"Service\",\"value\":\"/usr/bin/sleep 3000\"}]}"
     },
     "response": {
-      "status_code": 201,
+      "status_code": ["HTTP/1.1", 201, "Created"],
+      "type": "ok", 
       "headers": {},
       "body": ""
     }

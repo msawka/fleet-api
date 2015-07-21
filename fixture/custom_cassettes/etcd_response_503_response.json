@@ -1,10 +1,15 @@
 [
   {
     "request": {
-      "url": "https://discovery.etcd.io/abcd1234"
+      "url": "https://discovery.etcd.io/abcd1234",
+      "method": "get",
+      "options": {
+        "connect_timeout": 5000
+      }
     },
     "response": {
-      "status_code": 503,
+      "status_code": ["HTTP/1.1", 503, "Service Unavailable"],
+      "type": "ok",       
       "headers": {
         "Content-Length": "0"
       },

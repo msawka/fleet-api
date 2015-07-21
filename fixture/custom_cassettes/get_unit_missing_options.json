@@ -1,10 +1,15 @@
 [
   {
     "request": {
-      "url": "http://localhost:7002/fleet/v1/units/subgun-http.service"
+      "url": "http://localhost:7002/fleet/v1/units/subgun-http.service",
+      "method": "get",
+      "options": {
+        "connect_timeout": 5000
+      }
     },
     "response": {
-      "status_code": 200,
+      "status_code": ["HTTP/1.1", 200, "OK"],
+      "type": "ok", 
       "headers": {
         "Content-Type": "application/json"
       },

@@ -2,13 +2,18 @@
   {
     "request": {
       "url": "http://localhost:7002/fleet/v1/units/test.service",
+      "method": "put",
+      "options": {
+        "connect_timeout": 5000
+      },
       "headers": {
         "Content-Type": "application/json"
       },
       "body": "{\"currentState\":null,\"desiredState\":\"launched\",\"machineID\":null,\"name\":\"test.service\",\"options\":[{\"name\":\"ExecStart\",\"section\":\"Service\",\"value\":\"/usr/bin/sleep 3000\"}]}"
     },
     "response": {
-      "status_code": 201,
+      "status_code": ["HTTP/1.1", 201, "Created"],
+      "type": "ok", 
       "headers": {},
       "body": ""
     }

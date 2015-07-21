@@ -1,10 +1,15 @@
 [
   {
     "request": {
-      "url": "http://localhost:7002/fleet/v1/units/subgun-http.service"
+      "url": "http://localhost:7002/fleet/v1/units/subgun-http.service",
+      "method": "delete",
+      "options": {
+        "connect_timeout": 5000
+      }      
     },
     "response": {
-      "status_code": 204,
+      "status_code": ["HTTP/1.1", 204, "No Content"],
+      "type": "ok",
       "headers": {
       },
       "body": ""
